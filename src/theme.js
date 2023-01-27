@@ -6,7 +6,7 @@ export const theme = {
     pink: '#F943FD',
     lightBlue: '#96E6FF',
     purple: '#38005A',
-    lightBlueRGBA: (150, 230, 255, 0.6),
+    navButton: '#1976d2',
   },
   space: [
     '0px',
@@ -52,11 +52,5 @@ export const theme = {
   },
   shadows: {
     primary: '0px 4px 4px rgba(0, 0, 0, 0.15)',
-  },
-
-  mediaQueries: {
-    s: `@media screen and (min-width: 480px)`,
-    m: `@media screen and (min-width: 768px)`,
-    l: `@media screen and (min-width: 1200px)`,
   },
 };

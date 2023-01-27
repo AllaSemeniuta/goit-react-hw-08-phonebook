@@ -13,9 +13,19 @@ body {
   margin: 0;
 font-family: 'Montserrat', sans-serif;
   color: #212121;
-      height: 100vh;
+      min-height: 100vh;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+background: rgb(7, 168, 219);
+  background: linear-gradient(
+    90deg,
+    rgba(7, 168, 219, 1) 15%,
+    rgba(150, 103, 255, 1) 99%
+  );
+  background-position: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+
 }
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',

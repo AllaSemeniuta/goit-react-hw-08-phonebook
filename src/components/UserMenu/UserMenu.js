@@ -1,18 +1,37 @@
 import { useDispatch } from 'react-redux';
 import { logOut } from 'redux/auth/operations';
 import { useAuth } from 'hooks';
-import css from './UserMenu.module.css';
+import { FiLogOut } from 'react-icons/fi';
+import { Button, IconButton } from '@mui/material';
+import { WelcomeText, Wrapper } from './UserMenu.styled';
+
+const screenWidth = window.innerWidth;
 
 export const UserMenu = () => {
   const dispatch = useDispatch();
   const { user } = useAuth();
 
-  return (
-    <div className={css.wrapper}>
-      <p className={css.username}>Welcome, {user.name}</p>
-      <button type="button" onClick={() => dispatch(logOut())}>
+  const largeScreen = (
+    <Wrapper>
+      <WelcomeText> {user.email}</WelcomeText>
+      <Button
+        variant="contained"
+        endIcon={<FiLogOut />}
+        onClick={() => dispatch(logOut())}
+      >
         Logout
-      </button>
-    </div>
+      </Button>
+    </Wrapper>
   );
+
+  const mobileScreen = (
+    <Wrapper>
+      <WelcomeText> {user.name}</WelcomeText>
+      <IconButton aria-label="Logout" onClick={() => dispatch(logOut())}>
+        <FiLogOut />
+      </IconButton>
+    </Wrapper>
+  );
+
+  return <>{screenWidth > 600 ? largeScreen : mobileScreen}</>;
 };

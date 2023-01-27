@@ -3,9 +3,9 @@ import styled from 'styled-components';
 export const Item = styled.li`
   list-style: none;
   /* margin-bottom: 12px; */
-  margin: 0 auto 12px auto;
+  margin: 0 auto 16px auto;
   max-width: 390px;
-
+  flex-grow: 1;
   :hover,
   :focus {
     border-radius: 15px;

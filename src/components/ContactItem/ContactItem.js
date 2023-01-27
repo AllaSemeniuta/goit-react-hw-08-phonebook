@@ -8,7 +8,12 @@ export const ContactItem = ({ name, number, id }) => {
   const dispatch = useDispatch();
 
   return (
-    <Box display="flex" alignItems="center" justifyContent="space-between">
+    <Box
+      as="li"
+      display="flex"
+      alignItems="center"
+      justifyContent="space-between"
+    >
       <Box
         display="flex"
         alignItems="center"

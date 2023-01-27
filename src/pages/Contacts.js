@@ -8,7 +8,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchContacts } from 'redux/contacts/operations';
 import { selectError, selectIsLoading } from 'redux/contacts/selectors';
 import { useEffect } from 'react';
-import { Wrapper } from './Contacts.styled';
+import { Wrapper, ContactInfo } from './Contacts.styled';
 // import { Wrapper } from './App.styled';
 // import { RestrictedRoute } from 'components/RestrictedRoute';
 // import { Route, Routes } from 'react-router-dom';
@@ -35,16 +35,18 @@ export default function Contacts() {
       {/* <Title as="h1">Phonebook</Title> */}
       <Wrapper>
         <ContactForm />
-        <Title mb="30px">Contacts</Title>
-        {isLoading && !error ? (
-          <b>Request in progress...</b>
-        ) : (
-          <>
-            <Filter />
-            <ContactList />
-            <Toaster />
-          </>
-        )}
+        <ContactInfo>
+          <Title mb="30px">Contacts</Title>
+          {isLoading && !error ? (
+            <b>Request in progress...</b>
+          ) : (
+            <>
+              <Filter />
+              <ContactList />
+              <Toaster />
+            </>
+          )}
+        </ContactInfo>
       </Wrapper>
     </>
   );

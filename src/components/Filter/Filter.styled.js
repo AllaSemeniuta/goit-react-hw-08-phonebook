@@ -20,11 +20,11 @@ export const Form = styled.form`
   display: flex;
   flex-direction: column;
   max-width: 270px;
-  padding-left: 16px;
+  /* padding-left: 16px; */
   margin-bottom: ${p => p.theme.space[5]};
 
   @media screen and (min-width: 360px) {
-    padding-left: 40px;
+    /* padding-left: 40px; */
   }
   @media screen and (min-width: 768px) {
   }

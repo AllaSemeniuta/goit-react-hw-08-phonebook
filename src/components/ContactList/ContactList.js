@@ -20,9 +20,7 @@ export const ContactList = () => {
   return (
     <Box as="ul">
       {filterArr.map(({ name, number, id }) => (
-        <Item key={id} display="flex">
-          <ContactItem name={name} number={number} id={id} />
-        </Item>
+        <ContactItem key={id} name={name} number={number} id={id} />
       ))}
     </Box>
   );

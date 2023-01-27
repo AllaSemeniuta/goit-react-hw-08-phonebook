@@ -3,12 +3,13 @@ import styled from 'styled-components';
 export const SmallButton = styled.button`
   width: 110px;
   height: 30px;
-  border-radius: 25px;
+  border-radius: 4px;
   border-color: transparent;
   background-color: ${p => p.theme.colors.secondary};
   color: ${p => p.theme.colors.white};
   text-align: center;
   font-size: 14px;
+  margin-top: 12px;
 
   :hover,
   :focus {

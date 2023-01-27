@@ -1,4 +1,19 @@
 import styled from 'styled-components';
+import TextField from '@mui/material/TextField';
+
+export const CustomerInput = styled(TextField)`
+  background-color: #ffff;
+  border-radius: 4px;
+  div {
+    input {
+      font-weight: bold;
+    }
+  }
+
+  @media screen and (max-width: 350px) {
+    width: 220px;
+  }
+`;
 
 export const Input = styled.input`
   outline: transparent;
@@ -8,7 +23,7 @@ export const Input = styled.input`
   box-shadow: ${p => p.theme.shadows.primary};
   width: 250px;
   padding: 4px;
-
+  /* 
   @media screen and (min-width: 480px) {
   }
   @media screen and (min-width: 768px) {
@@ -16,13 +31,13 @@ export const Input = styled.input`
     width: 300px;
   }
   @media screen and (min-width: 1200px) {
-  } ;
+  } ; */
 `;
 
 export const Label = styled.label`
   margin-bottom: ${p => p.theme.space[2]};
   font-size: 16px;
-
+  /* 
   @media screen and (min-width: 480px) {
   }
   @media screen and (min-width: 768px) {
@@ -30,7 +45,7 @@ export const Label = styled.label`
     font-size: 20px;
   }
   @media screen and (min-width: 1200px) {
-  } ;
+  } ; */
 `;
 
 export const Form = styled.form`
@@ -41,33 +56,34 @@ export const Form = styled.form`
   align-items: flex-start;
   max-width: 310px;
   background: rgba(150, 230, 255, 0.65);
-  border-radius: 20px;
+  border-radius: 8px;
   padding-bottom: ${p => p.theme.space[3]};
   padding-top: ${p => p.theme.space[4]};
   padding-left: 16px;
-  /* padding-left: ${p => p.theme.space[4]};
-  padding-right: ${p => p.theme.space[4]};  */
+  padding-left: ${p => p.theme.space[4]};
+  padding-right: ${p => p.theme.space[4]};
   box-shadow: ${p => p.theme.shadows.primary};
-  /* margin-bottom: ${p => p.theme.space[6]}; */
+  margin-bottom: ${p => p.theme.space[6]};
 
-  @media screen and (min-width: 480px) {
+  /* @media screen and (min-width: 480px) {
   }
   @media screen and (min-width: 768px) {
     max-width: 420px;
     border-radius: 26px;
   }
   @media screen and (min-width: 1200px) {
-  } ;
+  } ; */
 `;
 
 export const Wrapper = styled.section`
-  margin-bottom: 60px;
-  padding-top: 80px;
+  flex-basis: 44%;
+  /* margin-bottom: 60px; */
+  /* padding-top: 80px; */
 
-  @media screen and (min-width: 480px) {
+  /* @media screen and (min-width: 480px) {
   }
   @media screen and (min-width: 768px) {
   }
   @media screen and (min-width: 1200px) {
-  } ;
+  } ; */
 `;
