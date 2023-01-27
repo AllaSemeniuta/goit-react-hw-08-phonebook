@@ -2,17 +2,16 @@ import PropTypes from 'prop-types';
 import { deleteContact } from 'redux/contacts/operations';
 import { useDispatch } from 'react-redux';
 import { Box } from 'components/Box/Box';
-import { Icon, Button } from './ContactItem.styled';
+import { Icon, Button, Wrapper } from './ContactItem.styled';
 
 export const ContactItem = ({ name, number, id }) => {
   const dispatch = useDispatch();
 
   return (
-    <Box
-      as="li"
-      display="flex"
-      alignItems="center"
-      justifyContent="space-between"
+    <Wrapper
+    // display="flex"
+    // alignItems="center"
+    // justifyContent="space-between"
     >
       <Box
         display="flex"
@@ -29,7 +28,7 @@ export const ContactItem = ({ name, number, id }) => {
       <Button type="button" onClick={() => dispatch(deleteContact(id))}>
         <Icon />
       </Button>
-    </Box>
+    </Wrapper>
   );
 };
 

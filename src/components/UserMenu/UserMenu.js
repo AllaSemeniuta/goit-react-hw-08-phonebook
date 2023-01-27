@@ -13,7 +13,7 @@ export const UserMenu = () => {
 
   const largeScreen = (
     <Wrapper>
-      <WelcomeText> {user.email}</WelcomeText>
+      <WelcomeText> {user.name}</WelcomeText>
       <Button
         variant="contained"
         endIcon={<FiLogOut />}
@@ -33,5 +33,5 @@ export const UserMenu = () => {
     </Wrapper>
   );
 
-  return <>{screenWidth > 600 ? largeScreen : mobileScreen}</>;
+  return <>{screenWidth >= 600 ? largeScreen : mobileScreen}</>;
 };

@@ -1,8 +1,7 @@
-import { NavLink } from 'react-router-dom';
 import { useAuth } from 'hooks';
-import css from './Navigation.module.css';
 import { Button, IconButton } from '@mui/material';
 import { FiHome, FiPhone } from 'react-icons/fi';
+import { StyledLink } from './Navigation.styled';
 
 const screenWidth = window.innerWidth;
 
@@ -11,33 +10,33 @@ export const Navigation = () => {
 
   const largeScreen = (
     <nav>
-      <NavLink className={css.link} to="/">
+      <StyledLink to="/">
         <Button variant="contained">Home</Button>
-      </NavLink>
+      </StyledLink>
       {isLoggedIn && (
-        <NavLink className={css.link} to="/contacts">
+        <StyledLink to="/contacts">
           <Button variant="contained">Contact</Button>
-        </NavLink>
+        </StyledLink>
       )}
     </nav>
   );
 
   const mobileScreen = (
     <nav>
-      <NavLink className={css.link} to="/">
+      <StyledLink to="/">
         <IconButton aria-label="Home">
           <FiHome />
         </IconButton>
-      </NavLink>
+      </StyledLink>
       {isLoggedIn && (
-        <NavLink className={css.link} to="/contacts">
+        <StyledLink to="/contacts">
           <IconButton aria-label="Contact">
             <FiPhone />
           </IconButton>
-        </NavLink>
+        </StyledLink>
       )}
     </nav>
   );
 
-  return <>{screenWidth > 600 ? largeScreen : mobileScreen}</>;
+  return <>{screenWidth >= 600 ? largeScreen : mobileScreen}</>;
 };

@@ -9,7 +9,6 @@ export const SmallButton = styled.button`
   color: ${p => p.theme.colors.white};
   text-align: center;
   font-size: 14px;
-  margin-top: 12px;
 
   :hover,
   :focus {
@@ -19,6 +18,8 @@ export const SmallButton = styled.button`
   }
 
   @media screen and (min-width: 480px) {
+    height: 42px;
+    font-size: 18px;
   }
   @media screen and (min-width: 768px) {
     width: 130px;

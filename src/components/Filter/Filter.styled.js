@@ -1,4 +1,20 @@
 import styled from 'styled-components';
+import TextField from '@mui/material/TextField';
+
+export const CustomerInput = styled(TextField)`
+  background-color: #ffff;
+  border-radius: 4px;
+  width: 220px;
+
+  /* div {
+    input {
+      font-weight: ${p => p.theme.fontWeights.bold};
+    }
+  } */
+
+  @media screen and (max-width: 569px) {
+  }
+`;
 
 export const Input = styled.input`
   outline: transparent;
@@ -11,7 +27,7 @@ export const Input = styled.input`
 `;
 
 export const Label = styled.label`
-  margin-bottom: 16px;
+  margin-bottom: ${p => p.theme.space[5]};
   font-size: ${p => p.theme.fontSizes.s};
   width: inherit;
 `;
@@ -19,6 +35,7 @@ export const Label = styled.label`
 export const Form = styled.form`
   display: flex;
   flex-direction: column;
+  align-items: center;
   max-width: 270px;
   /* padding-left: 16px; */
   margin-bottom: ${p => p.theme.space[5]};

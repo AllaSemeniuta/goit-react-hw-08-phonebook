@@ -1,5 +1,5 @@
 import { Button, IconButton } from '@mui/material';
-import { FiLogIn, FiHome, FiUserPlus } from 'react-icons/fi';
+import { FiLogIn, FiUserPlus } from 'react-icons/fi';
 import { StyledLink } from './AuthNav.styled';
 
 const screenWidth = window.innerWidth;
@@ -33,7 +33,7 @@ export const AuthNav = () => {
     </div>
   );
 
-  return <>{screenWidth > 600 ? largeScreen : mobileScreen}</>;
+  return <>{screenWidth >= 600 ? largeScreen : mobileScreen}</>;
 };
 
 // FiLogIn;

@@ -5,9 +5,14 @@ export const Wrapper = styled.main`
   padding: 0 15px;
   margin-left: auto;
   margin-right: auto;
+  display: flex;
+  align-items: center;
+  gap: ${p => p.theme.space[6]};
+  flex-direction: column;
 
-  @media screen and (min-width: 570px) {
-    display: flex;
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+    justify-content: space-around;
     align-items: flex-start;
     gap: ${p => p.theme.space[4]};
   }
@@ -16,5 +21,5 @@ export const Wrapper = styled.main`
 export const ContactInfo = styled.section`
   display: flex;
   flex-direction: column;
-  align-items: start;
+  align-items: center;
 `;
