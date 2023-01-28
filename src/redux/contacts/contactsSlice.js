@@ -3,6 +3,7 @@ import {
   addContact,
   fetchContacts,
   deleteContact,
+  editContact,
 } from 'redux/contacts/operations';
 import { logOut } from 'redux/auth/operations';
 
@@ -66,6 +67,19 @@ export const contactsSlise = createSlice({
       state.items = [];
       state.error = null;
       state.isLoading = false;
+    },
+    [editContact.pending]: handlePending,
+
+    [editContact.fulfilled](state, action) {
+      return {
+        ...state,
+        isLoading: false,
+        error: null,
+        items: [
+          ...state.items.filter(item => item.id !== action.payload.id),
+          action.payload,
+        ],
+      };
     },
   },
 });

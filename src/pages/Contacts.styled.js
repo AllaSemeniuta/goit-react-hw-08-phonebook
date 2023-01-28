@@ -22,4 +22,15 @@ export const ContactInfo = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @media screen and (min-width: 768px) {
+    width: 420px;
+  }
+`;
+
+export const RequestInfo = styled.p`
+  text-align: center;
+  @media screen and (min-width: 768px) {
+    width: 420px;
+  }
 `;

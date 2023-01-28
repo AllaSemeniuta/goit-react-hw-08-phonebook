@@ -35,11 +35,3 @@ export const AuthNav = () => {
 
   return <>{screenWidth >= 600 ? largeScreen : mobileScreen}</>;
 };
-
-// FiLogIn;
-// <Button variant="outlined" startIcon={<DeleteIcon />}>
-//   Delete
-// </Button>
-// <Button variant="contained" endIcon={<SendIcon />}>
-//   Send
-// </Button>

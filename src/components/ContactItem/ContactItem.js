@@ -1,33 +1,45 @@
 import PropTypes from 'prop-types';
 import { deleteContact } from 'redux/contacts/operations';
 import { useDispatch } from 'react-redux';
-import { Box } from 'components/Box/Box';
-import { Icon, Button, Wrapper } from './ContactItem.styled';
+import {
+  IconDelete,
+  IconEdit,
+  Button,
+  Wrapper,
+  ContactText,
+  ContactInfoWrapper,
+} from './ContactItem.styled';
+import { useState } from 'react';
+import BasicModal from 'components/Modal/Modal';
 
 export const ContactItem = ({ name, number, id }) => {
   const dispatch = useDispatch();
 
+  const [idContact, setIdContact] = useState(null);
+
+  const onCloseModal = () => {
+    setIdContact(null);
+    console.log('setIdContact(null)');
+  };
+
   return (
-    <Wrapper
-    // display="flex"
-    // alignItems="center"
-    // justifyContent="space-between"
-    >
-      <Box
-        display="flex"
-        alignItems="center"
-        flexGrow="1"
-        justifyContent="space-between"
-        pl={4}
-      >
+    <Wrapper>
+      <ContactInfoWrapper>
         {' '}
-        <p>{name}</p>
-        <p>{number}</p>
-      </Box>
+        <ContactText>{name}</ContactText>
+        <ContactText>{number}</ContactText>
+      </ContactInfoWrapper>
+      <Button type="button" onClick={() => setIdContact(id)}>
+        <IconEdit />
+      </Button>
 
       <Button type="button" onClick={() => dispatch(deleteContact(id))}>
-        <Icon />
+        <IconDelete />
       </Button>
+
+      {idContact && (
+        <BasicModal isOpen onClose={onCloseModal} user={{ name, number, id }} />
+      )}
     </Wrapper>
   );
 };

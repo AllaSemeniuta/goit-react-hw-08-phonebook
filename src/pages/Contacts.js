@@ -8,17 +8,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchContacts } from 'redux/contacts/operations';
 import { selectError, selectIsLoading } from 'redux/contacts/selectors';
 import { useEffect } from 'react';
-import { Wrapper, ContactInfo } from './Contacts.styled';
-// import { Wrapper } from './App.styled';
-// import { RestrictedRoute } from 'components/RestrictedRoute';
-// import { Route, Routes } from 'react-router-dom';
-// import { PrivateRoute } from 'components/PrivateRoute';
-// import LoginPage from 'pages/Login';
-// import HomePage from 'pages/Home';
-// import RegisterPage from 'pages/Register';
-// import { refreshUser } from 'redux/auth/operations';
-// import { useAuth } from 'hooks';
-// import { Layout } from 'components/Layout';
+import { Wrapper, ContactInfo, RequestInfo } from './Contacts.styled';
 
 export default function Contacts() {
   const dispatch = useDispatch();
@@ -32,13 +22,12 @@ export default function Contacts() {
   return (
     <>
       <GlobalStyle />
-      {/* <Title as="h1">Phonebook</Title> */}
       <Wrapper>
         <ContactForm />
         <ContactInfo>
           <Title mb="30px">Contacts</Title>
           {isLoading && !error ? (
-            <b>Request in progress...</b>
+            <RequestInfo>Request in progress...</RequestInfo>
           ) : (
             <>
               <Filter />
