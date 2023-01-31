@@ -13,7 +13,6 @@ export const UserMenu = () => {
 
   const largeScreen = (
     <Wrapper>
-      <WelcomeText> {user.name}</WelcomeText>
       <Button
         variant="contained"
         endIcon={<FiLogOut />}
@@ -26,7 +25,6 @@ export const UserMenu = () => {
 
   const mobileScreen = (
     <Wrapper>
-      <WelcomeText> {user.name}</WelcomeText>
       <IconButton aria-label="Logout" onClick={() => dispatch(logOut())}>
         <FiLogOut />
       </IconButton>

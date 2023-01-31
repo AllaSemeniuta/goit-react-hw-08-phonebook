@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const WelcomeText = styled.p`
   color: ${p => p.theme.colors.white};
   font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
-  font-weight: 700;
+  font-weight: ${p => p.theme.fontWeights.bold};
   font-size: 0.875rem;
   line-height: 1.75;
   letter-spacing: 0.02857em;
